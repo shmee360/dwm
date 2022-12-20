@@ -75,11 +75,13 @@ static const char *browsercmd[]  = { "chromium", NULL };
 static const char *vup[]  = { "amixer", "-q", "sset", "Master", "5%+", NULL };
 static const char *vdown[]  = { "amixer", "-q", "sset", "Master", "5%-", NULL };
 static const char *vmute[] = { "amixer", "-q", "sset", "Master", "toggle", NULL };
+static const char *lockcmd[] = { "slock", NULL };
 
 // https://gist.github.com/palopezv/efd34059af6126ad970940bcc6a90f2e
 #include <X11/XF86keysym.h>
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
