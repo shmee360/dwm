@@ -72,8 +72,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
-static const char *vup[]  = { "amixer", "-q", "sset", "Master", "5%+", NULL };
-static const char *vdown[]  = { "amixer", "-q", "sset", "Master", "5%-", NULL };
+static const char *vup[]  = { "barsig-vol", "-s", "1", "-u", NULL };
+static const char *vdown[]  = { "barsig-vol", "-s", "1", "-d", NULL };
 static const char *vmute[] = { "amixer", "-q", "sset", "Master", "toggle", NULL };
 static const char *lockcmd[] = { "slock", NULL };
 
